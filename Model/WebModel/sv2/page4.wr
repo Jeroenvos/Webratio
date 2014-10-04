@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="140" id="sv2#page4" name="Home Protected">
   <ContentUnits>
-    <DataUnit gr:x="195" gr:y="0" id="sv2#page4#dau1" name="Current Runner" entity="ent1" linkOrder="sv2#page4#dau1#ln3" displayAll="true">
+    <DataUnit gr:x="195" gr:y="0" id="sv2#page4#dau1" name="Current Runner" linkOrder="sv2#page4#dau1#ln3" displayAll="true">
       <Selector id="sv2#page4#dau1#su3" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page4#dau1#su3#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
@@ -12,9 +12,9 @@
         <LinkParameter id="sv2#page4#gtu1#ln1#par4" name="UserCtxParam.oid_KeyCondition2 [oid]" source="sv2#page4#gtu1.UserCtxParam" target="sv2#page4#dau1#su3#kcond2.userOID"/>
       </Link>
     </GetUnit>
-    <IndexUnit gr:x="105" gr:y="135" id="sv2#page4#inu3" name="Trainings" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att16 ent5#att17">
+    <IndexUnit gr:x="105" gr:y="135" id="sv2#page4#inu3" name="Trainings">
       <Selector id="sv2#page4#inu3#su4" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv2#page4#inu3#su4#rcond1" name="TrainingsOfCurrentUser" predicate="in" implied="false" role="rel6#role11"/>
+        <RelationshipRoleCondition id="sv2#page4#inu3#su4#rcond1" name="TrainingsOfCurrentUser" predicate="in" implied="false"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>
@@ -23,13 +23,6 @@
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#page4#dau1">
           <layout:Link link="sv2#page4#dau1#ln3"/>
-          <layout:Attribute attribute="ent1#att2"/>
-          <layout:Attribute attribute="ent1#att3"/>
-          <layout:Attribute attribute="ent1#att4"/>
-          <layout:Attribute attribute="ent1#att5"/>
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="password"/>
-          <layout:Attribute attribute="email"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -46,12 +39,7 @@
     </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page4#inu3">
-          <layout:Attribute attribute="ent5#att14"/>
-          <layout:Attribute attribute="ent5#att15"/>
-          <layout:Attribute attribute="ent5#att16"/>
-          <layout:Attribute attribute="ent5#att17"/>
-        </layout:Unit>
+        <layout:Unit unitId="sv2#page4#inu3"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>

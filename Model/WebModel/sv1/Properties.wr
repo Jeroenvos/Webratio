@@ -1,12 +1,12 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Home" homePage="sv1#page1">
   <OperationUnits>
-    <CreateUnit gr:x="520" gr:y="55" id="sv1#cru1" name="Create Runner" entity="ent1">
+    <CreateUnit gr:x="520" gr:y="55" id="sv1#cru1" name="Create Runner">
       <KOLink id="sv1#cru1#kln1" name="KOFlow1" to="sv1#page2" automaticCoupling="true"/>
       <OKLink id="sv1#cru1#oln2" name="OKFlow2" to="sv1#page1" automaticCoupling="true" gr:bendpoints="-93,-57,117,-47"/>
     </CreateUnit>
-    <SelectorUnit gr:x="420" gr:y="190" id="sv1#seu1" name="IsUsernameTaken" entity="ent1">
+    <SelectorUnit gr:x="420" gr:y="190" id="sv1#seu1" name="IsUsernameTaken">
       <Selector id="sv1#seu1#su1" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv1#seu1#su1#acond1" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+        <AttributesCondition id="sv1#seu1#su1#acond1" name="SameUsername" predicate="eq" booleanOperator="or" implied="false"/>
       </Selector>
       <OKLink id="sv1#seu1#oln3" name="OKFlow3" to="sv1#switch1">
         <LinkParameter id="sv1#seu1#oln3#par9" name="Data Size_Switch" source="dataSize" target="sv1#switch1.switch"/>
@@ -17,7 +17,7 @@
       <OKLink id="sv1#switch1#oln4" name="OKFlow4" to="sv1#cru1" code="0"/>
       <OKLink id="sv1#switch1#oln5" name="OKFlow5" to="sv1#page2#mssu1"/>
     </SwitchUnit>
-    <DeleteUnit gr:x="390" gr:y="325" id="sv1#dlu1" name="Delete Runner" entity="ent1">
+    <DeleteUnit gr:x="390" gr:y="325" id="sv1#dlu1" name="Delete Runner">
       <Selector id="sv1#dlu1#su2" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
