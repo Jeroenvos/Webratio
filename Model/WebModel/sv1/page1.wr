@@ -1,0 +1,117 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="25" gr:y="170" id="sv1#page1" name="Home Page">
+  <ContentUnits>
+    <EntryUnit gr:x="140" gr:y="25" id="sv1#page1#enu1" name="Create Runner" entity="ent1" fieldOrder="sv1#page1#enu1#fld1 sv1#page1#enu1#fld2 sv1#page1#enu1#fld3 sv1#page1#enu1#fld7 sv1#page1#enu1#fld5 sv1#page1#enu1#fld4" linkOrder="sv1#page1#enu1#ln2">
+      <Field id="sv1#page1#enu1#fld1" name="Name" type="string" modifiable="true" attribute="ent1#att2" preloaded="true"/>
+      <Field id="sv1#page1#enu1#fld2" name="UserName" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv1#page1#enu1#fld3" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv1#page1#enu1#fld4" name="Weigth" type="float" modifiable="true" attribute="ent1#att5" preloaded="true"/>
+      <Field id="sv1#page1#enu1#fld5" name="BirthDate" type="date" modifiable="true" attribute="ent1#att3" preloaded="true"/>
+      <Field id="sv1#page1#enu1#fld6" name="RegistrationDate" type="date" modifiable="true" attribute="ent1#att4" hidden="true" preloaded="true"/>
+      <Field id="sv1#page1#enu1#fld7" name="email" type="string" modifiable="true" attribute="email" preloaded="true">
+        <VRules>
+          <EMailValidationRule id="sv1#page1#enu1#fld7#email1" name="Email Validation" errorMessage="Ehi, do it right"/>
+        </VRules>
+      </Field>
+      <Link id="sv1#page1#enu1#ln2" name="Flow2" to="sv1#seu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln2#par8" name="UserName_SameUsername" source="sv1#page1#enu1#fld2" target="sv1#seu1#su1#acond1"/>
+      </Link>
+      <Link id="sv1#page1#enu1#ln7" name="Flow7" to="sv1#cru1" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln7#par44" name="BirthDate_BirthDate" source="sv1#page1#enu1#fld5" target="sv1#cru1.ent1#att3"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par45" name="email_email" source="sv1#page1#enu1#fld7" target="sv1#cru1.email"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par46" name="Name_Name" source="sv1#page1#enu1#fld1" target="sv1#cru1.ent1#att2"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par47" name="Password_password" source="sv1#page1#enu1#fld3" target="sv1#cru1.password"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par48" name="RegistrationDate_RegistrationDate" source="sv1#page1#enu1#fld6" target="sv1#cru1.ent1#att4"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par49" name="Runner Object_Runner Object" source="entityBean" target="sv1#cru1.entityBeans"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par50" name="UserName_userName" source="sv1#page1#enu1#fld2" target="sv1#cru1.userName"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par51" name="Weigth_Weigth" source="sv1#page1#enu1#fld4" target="sv1#cru1.ent1#att5"/>
+        <LinkParameter id="sv1#page1#enu1#ln7#par3" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv1#cru1.User2DefaultGroup.groupOID"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit gr:x="140" gr:y="160" id="sv1#page1#inu1" name="Runners In System" entity="ent1" displayAttributes="userName email ent1#att2 ent1#att3 ent1#att4 ent1#att5" linkOrder="sv1#page1#inu1#ln4">
+      <Link id="sv1#page1#inu1#ln4" name="Delete Runner" to="sv1#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <TimeUnit gr:x="0" gr:y="85" id="sv1#page1#tmu1" name="Current Time">
+      <Link id="sv1#page1#tmu1#ln5" name="Flow5" to="sv1#page1#enu1" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#tmu1#ln5#par31" name="Current/Input Date_RegistrationDate" source="currentDate" target="sv1#page1#enu1#fld6_slot"/>
+      </Link>
+    </TimeUnit>
+    <EntryUnit gr:x="10" gr:y="0" id="sv1#page1#enu2" name="Login" linkOrder="sv1#page1#enu2#ln9">
+      <Field id="sv1#page1#enu2#fld8" name="Username" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu2#fld9" name="Password" type="password" modifiable="true"/>
+      <Link id="sv1#page1#enu2#ln9" name="Flow9" to="sv1#lgu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu2#ln9#par1" name="Username_Username" source="sv1#page1#enu2#fld8" target="sv1#lgu1.username"/>
+        <LinkParameter id="sv1#page1#enu2#ln9#par2" name="Password_Password" source="sv1#page1#enu2#fld9" target="sv1#lgu1.password"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#fld1"/>
+          <layout:Field field="sv1#page1#enu1#fld2"/>
+          <layout:Field field="sv1#page1#enu1#fld3"/>
+          <layout:Field field="sv1#page1#enu1#fld7"/>
+          <layout:Field field="sv1#page1#enu1#fld5"/>
+          <layout:Field field="sv1#page1#enu1#fld4"/>
+          <layout:Link link="sv1#page1#enu1#ln2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Link link="sv1#page1#inu1#ln4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu2">
+          <layout:Field field="sv1#page1#enu2#fld8"/>
+          <layout:Field field="sv1#page1#enu2#fld9"/>
+          <layout:Link link="sv1#page1#enu2#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

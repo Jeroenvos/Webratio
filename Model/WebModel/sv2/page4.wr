@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="140" id="sv2#page4" name="Home Protected">
+  <ContentUnits>
+    <DataUnit gr:x="195" gr:y="0" id="sv2#page4#dau1" name="Current Runner" entity="ent1" linkOrder="sv2#page4#dau1#ln3" displayAll="true">
+      <Selector id="sv2#page4#dau1#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page4#dau1#su3#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page4#dau1#ln3" name="Log Out" to="sv2#lou1" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page4#dau1#ln10" name="Flow10" to="sv2#page4#inu3" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+    <GetUnit gr:x="0" gr:y="5" id="sv2#page4#gtu1" name="GetCurrentUser" contextParameters="UserCtxParam">
+      <Link id="sv2#page4#gtu1#ln1" name="Flow1" to="sv2#page4#dau1" type="transport" validate="true">
+        <LinkParameter id="sv2#page4#gtu1#ln1#par4" name="UserCtxParam.oid_KeyCondition2 [oid]" source="sv2#page4#gtu1.UserCtxParam" target="sv2#page4#dau1#su3#kcond2.userOID"/>
+      </Link>
+    </GetUnit>
+    <IndexUnit gr:x="105" gr:y="135" id="sv2#page4#inu3" name="Trainings" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att16 ent5#att17">
+      <Selector id="sv2#page4#inu3#su4" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page4#inu3#su4#rcond1" name="TrainingsOfCurrentUser" predicate="in" implied="false" role="rel6#role11"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page4#dau1">
+          <layout:Link link="sv2#page4#dau1#ln3"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page4#inu3">
+          <layout:Attribute attribute="ent5#att14"/>
+          <layout:Attribute attribute="ent5#att15"/>
+          <layout:Attribute attribute="ent5#att16"/>
+          <layout:Attribute attribute="ent5#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

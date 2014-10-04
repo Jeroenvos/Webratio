@@ -1,0 +1,29 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="735" gr:y="65" id="sv1#page2" name="Error">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#page2#mssu1" name="Error Message" linkOrder="sv1#page2#mssu1#ln6">
+      <Message xml:space="preserve">Here there is an error. $$Placeholder1$$ is duplicated. Go back</Message>
+      <Link id="sv1#page2#mssu1#ln6" name="Go Back" to="sv1#page1#enu1" type="normal" validate="true"/>
+      <Placeholder id="sv1#page2#mssu1#ph1" name="Placeholder1"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page2#mssu1">
+          <layout:Link link="sv1#page2#mssu1#ln6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
