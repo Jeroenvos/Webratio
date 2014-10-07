@@ -13,14 +13,14 @@
         <LinkParameter id="sv1#seu1#oln3#par6" name="isRequester_PASSING" sourceLinkParameter="sv1#page1#enu1#ln2#par5" passing="true"/>
       </OKLink>
     </SelectorUnit>
-    <SwitchUnit gr:x="560" gr:y="310" id="sv1#switch1" name="IsDuplicate">
+    <SwitchUnit gr:x="605" gr:y="355" id="sv1#switch1" name="IsDuplicate">
       <Case value="0"/>
       <OKLink id="sv1#switch1#oln4" name="OKFlow4" to="sv1#switch2" code="0">
-        <LinkParameter id="sv1#switch1#oln4#par13" name="isRequester_PASSING" sourceLinkParameter="sv1#seu1#oln3#par6" passing="true"/>
+        <LinkParameter id="sv1#switch1#oln4#par16" name="isRequester_PASSING_Switch" sourceLinkParameter="sv1#seu1#oln3#par6" target="sv1#switch2.switch"/>
       </OKLink>
       <OKLink id="sv1#switch1#oln5" name="OKFlow5" to="sv1#page2#mssu1" gr:bendpoints="139,-51,229,274;157,-265,247,60"/>
     </SwitchUnit>
-    <DeleteUnit gr:x="365" gr:y="395" id="sv1#dlu1" name="Delete Runner" entity="User">
+    <DeleteUnit gr:x="440" gr:y="400" id="sv1#dlu1" name="Delete User" entity="User">
       <Selector id="sv1#dlu1#su2" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
@@ -28,7 +28,7 @@
       <KOLink id="sv1#dlu1#kln2" name="KOFlow2" to="sv1#page2" automaticCoupling="true" gr:bendpoints="433,90,73,340;396,-386,286,44"/>
     </DeleteUnit>
     <LoginUnit gr:x="90" gr:y="55" id="sv1#lgu1" name="Login"/>
-    <SwitchUnit gr:x="550" gr:y="205" id="sv1#switch2" name="IsRequester">
+    <SwitchUnit gr:x="560" gr:y="180" id="sv1#switch2" name="IsRequester">
       <OKLink id="sv1#switch2#oln7" name="OKFlow7" to="sv1#cru1" automaticCoupling="true" code="0"/>
       <OKLink id="sv1#switch2#oln8" name="OKFlow8" to="sv1#cru2" automaticCoupling="true"/>
       <Case value="0"/>

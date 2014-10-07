@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="25" gr:y="170" id="sv1#page1" name="Home Page">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="15" gr:y="170" id="sv1#page1" name="Home Page">
   <ContentUnits>
-    <EntryUnit gr:x="140" gr:y="25" id="sv1#page1#enu1" name="Create User" fieldOrder="sv1#page1#enu1#fld1 sv1#page1#enu1#fld2 sv1#page1#enu1#fld3 sv1#page1#enu1#fld7 sv1#page1#enu1#fld5 sv1#page1#enu1#sfld1" linkOrder="sv1#page1#enu1#ln2" entity="User">
+    <EntryUnit gr:x="150" gr:y="25" id="sv1#page1#enu1" name="Create User" fieldOrder="sv1#page1#enu1#fld1 sv1#page1#enu1#fld2 sv1#page1#enu1#fld3 sv1#page1#enu1#fld7 sv1#page1#enu1#fld5 sv1#page1#enu1#sfld1" linkOrder="sv1#page1#enu1#ln2" entity="User">
       <Field id="sv1#page1#enu1#fld1" name="Name" type="string" modifiable="true" preloaded="true"/>
       <Field id="sv1#page1#enu1#fld2" name="UserName" type="string" modifiable="true"/>
       <Field id="sv1#page1#enu1#fld3" name="Password" type="password" modifiable="true"/>
@@ -22,7 +22,10 @@
         <LinkParameter id="sv1#page1#enu1#ln7#par50" name="UserName_userName" source="sv1#page1#enu1#fld2" target="sv1#cru1.userName"/>
         <LinkParameter id="sv1#page1#enu1#ln7#par3" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv1#cru1.User2DefaultGroup.groupOID"/>
       </Link>
-      <SelectionField id="sv1#page1#enu1#sfld1" name="isRequester" type="boolean" modifiable="true"/>
+      <SelectionField id="sv1#page1#enu1#sfld1" name="isRequester" type="boolean" modifiable="true" slotOrder="sv1#page1#enu1#sfld1#slot1 sv1#page1#enu1#sfld1#slot2">
+        <Slot id="sv1#page1#enu1#sfld1#slot2" name="Worker" value="0" label="true" output="true"/>
+        <Slot id="sv1#page1#enu1#sfld1#slot1" name="Requester" value="1" label="true" output="true"/>
+      </SelectionField>
       <Link id="sv1#page1#enu1#ln12" name="Flow12" to="sv1#cru2" type="transport" validate="true">
         <LinkParameter id="sv1#page1#enu1#ln12#par7" name="email_email" source="sv1#page1#enu1#fld7" target="sv1#cru2.email"/>
         <LinkParameter id="sv1#page1#enu1#ln12#par10" name="Password_password" source="sv1#page1#enu1#fld3" target="sv1#cru2.password"/>
@@ -30,15 +33,15 @@
         <LinkParameter id="sv1#page1#enu1#ln12#par12" name="UserName_userName" source="sv1#page1#enu1#fld2" target="sv1#cru2.userName"/>
       </Link>
     </EntryUnit>
-    <IndexUnit gr:x="140" gr:y="160" id="sv1#page1#inu1" name="Runners In System" linkOrder="sv1#page1#inu1#ln4" entity="User" displayAttributes="userName User#att13">
-      <Link id="sv1#page1#inu1#ln4" name="Delete Runner" to="sv1#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+    <IndexUnit gr:x="150" gr:y="160" id="sv1#page1#inu1" name="Requester in System" linkOrder="sv1#page1#inu1#ln4" entity="ent12" displayAttributes="userName User#att13">
+      <Link id="sv1#page1#inu1#ln4" name="Delete Requester" to="sv1#dlu1" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
-    <TimeUnit gr:x="0" gr:y="85" id="sv1#page1#tmu1" name="Current Time">
+    <TimeUnit gr:x="10" gr:y="85" id="sv1#page1#tmu1" name="Current Time">
       <Link id="sv1#page1#tmu1#ln5" name="Flow5" to="sv1#page1#enu1" type="transport" validate="true">
         <LinkParameter id="sv1#page1#tmu1#ln5#par31" name="Current/Input Date_RegistrationDate" source="currentDate" target="sv1#page1#enu1#fld6_slot"/>
       </Link>
     </TimeUnit>
-    <EntryUnit gr:x="10" gr:y="0" id="sv1#page1#enu2" name="Login" linkOrder="sv1#page1#enu2#ln9">
+    <EntryUnit gr:x="20" gr:y="0" id="sv1#page1#enu2" name="Login" linkOrder="sv1#page1#enu2#ln9">
       <Field id="sv1#page1#enu2#fld8" name="Username" type="string" modifiable="true"/>
       <Field id="sv1#page1#enu2#fld9" name="Password" type="password" modifiable="true"/>
       <Link id="sv1#page1#enu2#ln9" name="Flow9" to="sv1#lgu1" type="normal" validate="true">
@@ -46,6 +49,9 @@
         <LinkParameter id="sv1#page1#enu2#ln9#par2" name="Password_Password" source="sv1#page1#enu2#fld9" target="sv1#lgu1.password"/>
       </Link>
     </EntryUnit>
+    <IndexUnit id="sv1#page1#inu4" name="Workers in System" linkOrder="sv1#page1#inu4#ln13" gr:x="0" gr:y="160" entity="ent7" displayAttributes="userName User#att13">
+      <Link id="sv1#page1#inu4#ln13" name="Delete Worker" to="sv1#dlu1" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -113,7 +119,13 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu4">
+          <layout:Link link="sv1#page1#inu4#ln13"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="User#att13"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
