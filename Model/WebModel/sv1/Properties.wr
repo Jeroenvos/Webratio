@@ -1,26 +1,6 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Home" homePage="sv1#page1">
   <OperationUnits>
-    <CreateUnit gr:x="390" gr:y="85" id="sv1#cru1" name="Create Worker" entity="ent7">
-      <KOLink id="sv1#cru1#kln1" name="KOFlow1" to="sv1#page2" automaticCoupling="true"/>
-      <OKLink id="sv1#cru1#oln2" name="OKFlow2" to="sv1#page1" automaticCoupling="true"/>
-    </CreateUnit>
-    <SelectorUnit gr:x="370" gr:y="270" id="sv1#seu1" name="IsUsernameTaken" entity="User" distinctAttributes="userName">
-      <Selector id="sv1#seu1#su1" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv1#seu1#su1#acond1" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
-      </Selector>
-      <OKLink id="sv1#seu1#oln3" name="OKFlow3" to="sv1#switch1">
-        <LinkParameter id="sv1#seu1#oln3#par9" name="Data Size_Switch" source="dataSize" target="sv1#switch1.switch"/>
-        <LinkParameter id="sv1#seu1#oln3#par6" name="isRequester_PASSING" sourceLinkParameter="sv1#page1#enu1#ln2#par5" passing="true"/>
-      </OKLink>
-    </SelectorUnit>
-    <SwitchUnit gr:x="605" gr:y="355" id="sv1#switch1" name="IsDuplicate">
-      <Case value="0"/>
-      <OKLink id="sv1#switch1#oln4" name="OKFlow4" to="sv1#switch2" code="0">
-        <LinkParameter id="sv1#switch1#oln4#par16" name="isRequester_PASSING_Switch" sourceLinkParameter="sv1#seu1#oln3#par6" target="sv1#switch2.switch"/>
-      </OKLink>
-      <OKLink id="sv1#switch1#oln5" name="OKFlow5" to="sv1#page2#mssu1" gr:bendpoints="139,-51,229,274;157,-265,247,60"/>
-    </SwitchUnit>
-    <DeleteUnit gr:x="440" gr:y="400" id="sv1#dlu1" name="Delete User" entity="User">
+    <DeleteUnit gr:x="420" gr:y="480" id="sv1#dlu1" name="Delete User" entity="User">
       <Selector id="sv1#dlu1#su2" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
@@ -28,14 +8,15 @@
       <KOLink id="sv1#dlu1#kln2" name="KOFlow2" to="sv1#page2" automaticCoupling="true" gr:bendpoints="433,90,73,340;396,-386,286,44"/>
     </DeleteUnit>
     <LoginUnit gr:x="90" gr:y="55" id="sv1#lgu1" name="Login"/>
-    <SwitchUnit gr:x="560" gr:y="180" id="sv1#switch2" name="IsRequester">
-      <OKLink id="sv1#switch2#oln7" name="OKFlow7" to="sv1#cru1" automaticCoupling="true" code="0"/>
-      <OKLink id="sv1#switch2#oln8" name="OKFlow8" to="sv1#cru2" automaticCoupling="true"/>
-      <Case value="0"/>
-    </SwitchUnit>
-    <CreateUnit gr:x="570" gr:y="80" id="sv1#cru2" name="Create Requester" entity="ent12">
-      <OKLink id="sv1#cru2#oln1" name="OKFlow1" to="sv1#page1" automaticCoupling="true"/>
-      <KOLink id="sv1#cru2#kln3" name="KOFlow3" to="sv1#page2" automaticCoupling="true"/>
-    </CreateUnit>
+    <ModuleInstanceUnit gr:x="385" gr:y="135" id="sv1#miu1" moduleId="mov1#opm3">
+      <OKLink id="sv1#miu1#oln10" to="sv1#page2#mssu1" name="OKFlow5" codeRef="mov1#opm3#okcu1"/>
+      <OKLink id="sv1#miu1#oln11" to="sv1#page1" name="OKFlow1" codeRef="mov1#opm3#okcu2" gr:bendpoints="-40,105,255,-85"/>
+      <KOLink id="sv1#miu1#kln4" to="sv1#page2" name="KOFlow3" gr:bendpoints="110,-90,55,105"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="445" gr:y="320" id="sv1#miu3" action="true" moduleId="mov1#opm4">
+      <KOLink id="sv1#miu3#kln11" name="KOFlow11" to="sv1#page2" gr:bendpoints="118,-203,133,142"/>
+      <OKLink id="sv1#miu3#oln30" name="OKFlow30" to="sv1#page2" automaticCoupling="true" codeRef="mov1#opm4#okcu4" gr:bendpoints="192,-183,207,162"/>
+      <OKLink id="sv1#miu3#oln31" name="OKFlow31" to="sv1#page1" automaticCoupling="true" codeRef="mov1#opm4#okcu3" gr:bendpoints="-144,-33,216,-38"/>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

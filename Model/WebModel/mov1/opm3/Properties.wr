@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="65" gr:y="260" id="mov1#opm3" name="Create Worker">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="0" gr:y="287" id="mov1#opm3#icu3">
+      <InputCollectorParameter id="mov1#opm3#icu3#icp1" name="Group.oid(defaultGroup)"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp2" name="Create Requester email"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp3" name="Requester Object"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp4" name="Create Worker email"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp5" name="Create Requester userName"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp6" name="SameUsername"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp7" name="Worker Object"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp8" name="Create Worker userName"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp9" name="Create Worker password"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp10" name="Create Requester password"/>
+      <InputCollectorParameter id="mov1#opm3#icu3#icp11" name="isRequester_PASSING"/>
+      <Link id="mov1#opm3#icu3#ln16" to="mov1#opm3#cru4" type="transport" validate="true" name="Flow7">
+        <LinkParameter id="mov1#opm3#icu3#ln16#par32" name="1_Group.oid(defaultGroup)" target="mov1#opm3#cru4.User2DefaultGroup.groupOID" source="mov1#opm3#icu3#icp1"/>
+        <LinkParameter id="mov1#opm3#icu3#ln16#par33" source="mov1#opm3#icu3#icp7" name="Runner Object_Runner Object" target="mov1#opm3#cru4.entityBeans"/>
+        <LinkParameter id="mov1#opm3#icu3#ln16#par34" source="mov1#opm3#icu3#icp9" name="Password_password" target="mov1#opm3#cru4.password"/>
+        <LinkParameter id="mov1#opm3#icu3#ln16#par35" source="mov1#opm3#icu3#icp4" name="email_email" target="mov1#opm3#cru4.email"/>
+        <LinkParameter id="mov1#opm3#icu3#ln16#par36" source="mov1#opm3#icu3#icp8" name="UserName_userName" target="mov1#opm3#cru4.userName"/>
+      </Link>
+      <OKLink id="mov1#opm3#icu3#oln9" to="mov1#opm3#seu3" validate="true" name="Flow2">
+        <LinkParameter id="mov1#opm3#icu3#oln9#par21" source="mov1#opm3#icu3#icp6" name="UserName_SameUsername" target="mov1#opm3#seu3#su6#acond4"/>
+        <LinkParameter id="mov1#opm3#icu3#oln9#par22" source="mov1#opm3#icu3#icp11" name="isRequester_PASSING" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="935" gr:y="600" id="mov1#opm3#okcu2" name="Success"/>
+    <OKCollectorUnit gr:x="935" gr:y="300" id="mov1#opm3#okcu1" name="Duplicate"/>
+    <KOCollectorUnit gr:x="935" gr:y="0" id="mov1#opm3#kocu1" name="DB Error"/>
+    <SelectorUnit id="mov1#opm3#seu3" name="IsUsernameTaken" gr:x="410" gr:y="460" entity="User" distinctAttributes="userName">
+      <Selector id="mov1#opm3#seu3#su6" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#opm3#seu3#su6#acond4" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov1#opm3#seu3#oln15" name="OKFlow3" to="mov1#opm3#switch4">
+        <LinkParameter id="mov1#opm3#seu3#oln15#par28" name="Data Size_Switch" source="dataSize" target="mov1#opm3#switch4.switch"/>
+        <LinkParameter id="mov1#opm3#seu3#oln15#par29" name="isRequester_PASSING" sourceLinkParameter="mov1#opm3#icu3#oln9#par22" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit id="mov1#opm3#switch4" name="IsDuplicate" gr:x="535" gr:y="335">
+      <Case value="0"/>
+      <OKLink id="mov1#opm3#switch4#oln18" name="OKFlow4" to="mov1#opm3#cru4" code="0"/>
+      <OKLink id="mov1#opm3#switch4#oln20" to="mov1#opm3#okcu1" name="OKFlow5"/>
+    </SwitchUnit>
+    <CreateUnit id="mov1#opm3#cru4" name="Create Worker" gr:x="570" gr:y="150" entity="ent7">
+      <OKLink id="mov1#opm3#cru4#oln21" to="mov1#opm3#okcu2" name="OKFlow2"/>
+      <KOLink id="mov1#opm3#cru4#kln8" to="mov1#opm3#kocu1" name="KOFlow1"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

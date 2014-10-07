@@ -1,0 +1,48 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Create Requester" gr:x="95" gr:y="110">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu4" gr:x="0" gr:y="287">
+      <InputCollectorParameter id="mov1#opm4#icu4#icp12" name="Group.oid(defaultGroup)"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp13" name="Create Requester email"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp14" name="Requester Object"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp15" name="Create Worker email"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp16" name="Create Requester userName"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp17" name="SameUsername"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp18" name="Worker Object"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp19" name="Create Worker userName"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp20" name="Create Worker password"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp21" name="Create Requester password"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp22" name="isRequester_PASSING"/>
+      <Link id="mov1#opm4#icu4#ln19" name="Flow12" to="mov1#opm4#cru5" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#icu4#ln19#par48" name="User Object_Requester Object" source="mov1#opm4#icu4#icp14" target="mov1#opm4#cru5.entityBeans"/>
+        <LinkParameter id="mov1#opm4#icu4#ln19#par51" name="Password_password" source="mov1#opm4#icu4#icp21" target="mov1#opm4#cru5.password"/>
+        <LinkParameter id="mov1#opm4#icu4#ln19#par52" name="UserName_userName" source="mov1#opm4#icu4#icp16" target="mov1#opm4#cru5.userName"/>
+        <LinkParameter id="mov1#opm4#icu4#ln19#par53" name="email_email" source="mov1#opm4#icu4#icp13" target="mov1#opm4#cru5.email"/>
+      </Link>
+      <OKLink id="mov1#opm4#icu4#oln22" name="Flow2" to="mov1#opm4#seu4">
+        <LinkParameter id="mov1#opm4#icu4#oln22#par54" name="UserName_SameUsername" source="mov1#opm4#icu4#icp17" target="mov1#opm4#seu4#su7#acond5"/>
+        <LinkParameter id="mov1#opm4#icu4#oln22#par55" name="isRequester_PASSING" source="mov1#opm4#icu4#icp22" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#opm4#okcu3" name="Success" gr:x="935" gr:y="600"/>
+    <OKCollectorUnit id="mov1#opm4#okcu4" name="Duplicate" gr:x="935" gr:y="300"/>
+    <KOCollectorUnit id="mov1#opm4#kocu2" name="DB Error" gr:x="935" gr:y="0"/>
+    <CreateUnit id="mov1#opm4#cru5" name="Create Requester" gr:x="650" gr:y="120" entity="ent12">
+      <OKLink id="mov1#opm4#cru5#oln23" name="OKFlow1" to="mov1#opm4#okcu3"/>
+      <KOLink id="mov1#opm4#cru5#kln9" name="KOFlow3" to="mov1#opm4#kocu2"/>
+    </CreateUnit>
+    <SelectorUnit id="mov1#opm4#seu4" name="IsUsernameTaken" gr:x="385" gr:y="350" entity="User" distinctAttributes="userName">
+      <Selector id="mov1#opm4#seu4#su7" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#opm4#seu4#su7#acond5" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov1#opm4#seu4#oln24" name="OKFlow3" to="mov1#opm4#switch6">
+        <LinkParameter id="mov1#opm4#seu4#oln24#par56" name="Data Size_Switch" source="dataSize" target="mov1#opm4#switch6.switch"/>
+        <LinkParameter id="mov1#opm4#seu4#oln24#par57" name="isRequester_PASSING" sourceLinkParameter="mov1#opm4#icu4#oln22#par55" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit id="mov1#opm4#switch6" name="IsDuplicate" gr:x="620" gr:y="360">
+      <Case value="0"/>
+      <OKLink id="mov1#opm4#switch6#oln27" name="OKFlow4" to="mov1#opm4#cru5" code="0"/>
+      <OKLink id="mov1#opm4#switch6#oln28" name="OKFlow5" to="mov1#opm4#okcu4"/>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>
