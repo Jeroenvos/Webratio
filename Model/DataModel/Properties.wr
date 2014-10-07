@@ -1,5 +1,5 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="-15" gr:y="-5" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att32 User#att33" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="40" gr:y="-30" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att32 User#att33" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="userName" id="userName" type="string" db:column="username"/>
     <Attribute name="password" id="password" type="password" db:column="password"/>
@@ -7,11 +7,11 @@
     <Attribute id="User#att32" name="name" type="string"/>
     <Attribute id="User#att33" name="birth_date" type="date"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="165" gr:y="-95" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="340" gr:y="10" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="470" gr:y="-85" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="645" gr:y="0" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
     <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
     <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
@@ -24,7 +24,7 @@
       <db:JoinColumn attribute="groupOID" name="group_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user" gr:bendpoints="57,-129,-123,1">
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user" gr:bendpoints="133,-65,-132,-30">
     <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
       <db:JoinColumn attribute="userOID" name="oid"/>
     </RelationshipRole1>
@@ -48,9 +48,8 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="MyDB" type="MySQL" url="jdbc:mysql://127.0.0.1:3306/runner_example" username="root">
-  </db:Database>
-  <Entity gr:x="375" gr:y="120" id="ent6" name="Task" duration="persistent" attributeOrder="ent6#att1 ent6#att3 ent6#att4 ent6#att5 ent6#att7 ent6#att8">
+  <db:Database id="db1" name="MyDB" type="MySQL" url="jdbc:mysql://127.0.0.1:3306/runner_example" username="root"/>
+  <Entity gr:x="315" gr:y="250" id="ent6" name="Task" duration="persistent" attributeOrder="ent6#att1 ent6#att3 ent6#att4 ent6#att5 ent6#att7 ent6#att8">
     <Attribute id="ent6#att1" key="true" name="oid" type="integer"/>
     <Attribute id="ent6#att3" name="title" type="string"/>
     <Attribute id="ent6#att4" name="description" type="string"/>
@@ -58,14 +57,14 @@
     <Attribute id="ent6#att7" name="max_execution_time" type="time"/>
     <Attribute id="ent6#att8" name="expiration" type="timestamp"/>
   </Entity>
-  <Entity gr:x="20" gr:y="305" id="ent7" name="Worker" duration="persistent" attributeOrder="ent7#att15">
+  <Entity gr:x="35" gr:y="160" id="ent7" name="Worker" duration="persistent" attributeOrder="ent7#att15">
     <Generalization superEntity="User"/>
     <Attribute id="ent7#att15" name="accuracy_score" type="float"/>
   </Entity>
-  <Entity gr:x="295" gr:y="345" id="ent8" name="Skill" duration="persistent">
+  <Entity gr:x="360" gr:y="160" id="ent8" name="Skill" duration="persistent">
     <Attribute id="ent8#att6" key="true" name="oid" type="integer"/>
   </Entity>
-  <Entity gr:x="395" gr:y="410" id="ent9" name="Item" duration="persistent" attributeOrder="ent9#att9 ent9#att10 ent9#att11 ent9#att12">
+  <Entity gr:x="350" gr:y="475" id="ent9" name="Item" duration="persistent" attributeOrder="ent9#att9 ent9#att10 ent9#att11 ent9#att12">
     <Attribute id="ent9#att9" key="true" name="oid" type="integer"/>
     <Attribute id="ent9#att10" name="title" type="string"/>
     <Attribute id="ent9#att11" name="caption" type="string"/>
@@ -87,27 +86,23 @@
     <RelationshipRole1 id="rel8#role15" name="SkillToWorker" maxCard="N"/>
     <RelationshipRole2 id="rel8#role16" name="WorkerToSkill" maxCard="N"/>
   </Relationship>
-  <Entity gr:x="620" gr:y="405" id="ent10" name="Annotation" duration="persistent" attributeOrder="ent10#att16 ent10#att17 ent10#att18">
+  <Entity gr:x="615" gr:y="485" id="ent10" name="Annotation" duration="persistent" attributeOrder="ent10#att16 ent10#att17 ent10#att18">
     <Attribute id="ent10#att16" key="true" name="oid" type="integer"/>
     <Attribute id="ent10#att17" name="label" type="string"/>
     <Attribute id="ent10#att18" name="confidence" type="integer"/>
   </Entity>
-  <Entity gr:x="620" gr:y="170" id="ent11" name="Annotation Campaign" duration="persistent" attributeOrder="ent11#att19 ent11#att24 ent11#att25 ent11#att26">
+  <Entity gr:x="605" gr:y="270" id="ent11" name="Annotation Campaign" duration="persistent" attributeOrder="ent11#att19 ent11#att24 ent11#att25 ent11#att26">
     <Attribute id="ent11#att19" key="true" name="oid" type="integer"/>
     <Attribute id="ent11#att24" name="name" type="string"/>
     <Attribute id="ent11#att25" name="budget" type="float"/>
     <Attribute id="ent11#att26" name="status" type="boolean"/>
   </Entity>
-  <Relationship id="rel9" name="Annotation_Annotation Campaign" sourceEntity="ent10" targetEntity="ent11">
-    <RelationshipRole1 id="rel9#role17" name="AnnotationToAnnotation Campaign" maxCard="N"/>
-    <RelationshipRole2 id="rel9#role18" name="Annotation CampaignToAnnotation" maxCard="N"/>
-  </Relationship>
-  <Entity gr:x="650" gr:y="10" id="ent12" name="Requester" duration="persistent" attributeOrder="ent12#att22 ent12#att23">
+  <Entity gr:x="630" gr:y="150" id="ent12" name="Requester" duration="persistent" attributeOrder="ent12#att22 ent12#att23">
     <Attribute id="ent12#att22" name="budget" type="float"/>
     <Attribute id="ent12#att23" name="status" type="string"/>
     <Generalization superEntity="User"/>
   </Entity>
-  <Entity gr:x="95" gr:y="425" id="ent13" name="Reward" duration="persistent" attributeOrder="ent13#att27 ent13#att28">
+  <Entity gr:x="90" gr:y="480" id="ent13" name="Reward" duration="persistent" attributeOrder="ent13#att27 ent13#att28">
     <Attribute id="ent13#att27" key="true" name="oid" type="integer"/>
     <Attribute id="ent13#att28" name="amount" type="float"/>
   </Entity>
@@ -123,10 +118,11 @@
     <RelationshipRole1 id="rel13#role25" name="TaskToAnnotation Campaign" maxCard="1"/>
     <RelationshipRole2 id="rel13#role26" name="Annotation CampaignToTask" maxCard="N"/>
   </Relationship>
-  <Entity gr:x="115" gr:y="165" id="ent14" name="TaskExecution" duration="persistent" attributeOrder="ent14#att29 ent14#att30 ent14#att31">
+  <Entity gr:x="15" gr:y="270" id="ent14" name="TaskExecution" duration="persistent" attributeOrder="ent14#att29 ent14#att30 ent14#att31 ent14#att2">
     <Attribute id="ent14#att29" key="true" name="oid" type="integer"/>
     <Attribute id="ent14#att30" name="duration" type="time"/>
     <Attribute id="ent14#att31" name="execution_time" type="timestamp"/>
+    <Attribute id="ent14#att2" name="accuracy" type="float"/>
   </Entity>
   <Relationship id="rel14" name="TaskExecution_Worker" sourceEntity="ent14" targetEntity="ent7">
     <RelationshipRole1 id="rel14#role27" name="TaskExecutionToWorker" maxCard="1"/>
