@@ -1,3 +1,10 @@
-<SiteView id="sv3" name="Worker Area" protected="true">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Worker Area" protected="true" homePage="sv3#page7" landmarks="sv3#page7">
+  <OperationUnits>
+    <CreateUnit gr:x="925" gr:y="480" id="sv3#cru8" name="Create Annotation" entity="ent10">
+      <OKLink id="sv3#cru8#oln36" name="OKFlow36" to="sv3#page8#dau10" gr:bendpoints="-6,-443,304,-138;-311,-444,-1,-139">
+        <LinkParameter id="sv3#cru8#oln36#par148" name="oid_PASSING_KeyCondition23 [oid]" sourceLinkParameter="sv3#page9#enu12#ln68#par147" target="sv3#page8#dau10#su32#kcond23.ent6#att1"/>
+      </OKLink>
+    </CreateUnit>
+    <LogoutUnit gr:x="435" gr:y="45" id="sv3#lou2" name="Logout" siteView="sv1"/>
+  </OperationUnits>
 </SiteView>

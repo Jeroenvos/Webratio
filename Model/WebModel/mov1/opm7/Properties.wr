@@ -1,0 +1,26 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm7" name="Create Task" gr:x="525" gr:y="115">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm7#icu7" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm7#icu7#icp18" name="description"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp19" name="maxExecutionTime"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp20" name="expiration"/>
+      <OKLink id="mov1#opm7#icu7#oln7" name="OKFlow5" to="mov1#opm7#cru2">
+        <LinkParameter id="mov1#opm7#icu7#oln7#par48" name="description_description" source="mov1#opm7#icu7#icp18" target="mov1#opm7#cru2.ent6#att4"/>
+        <LinkParameter id="mov1#opm7#icu7#oln7#par49" name="expiration_expiration" source="mov1#opm7#icu7#icp20" target="mov1#opm7#cru2.ent6#att8"/>
+        <LinkParameter id="mov1#opm7#icu7#oln7#par50" name="maxExecutionTime_maxExecutionTime" source="mov1#opm7#icu7#icp19" target="mov1#opm7#cru2.ent6#att7"/>
+        <LinkParameter id="mov1#opm7#icu7#oln7#par55" name="title_title" source="mov1#opm7#icu7#icp22" target="mov1#opm7#cru2.ent6#att3"/>
+        <LinkParameter id="mov1#opm7#icu7#oln7#par57" name="acID_Annotation Campaign.oid(TaskToAnnotation Campaign)" source="mov1#opm7#icu7#icp30" target="mov1#opm7#cru2.rel13#role25.ent11#att19"/>
+        <LinkParameter id="mov1#opm7#icu7#oln7#par58" name="reward_reward" source="mov1#opm7#icu7#icp29" target="mov1#opm7#cru2.ent6#att5"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp22" name="title"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp29" name="reward"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp30" name="acID"/>
+    </InputCollectorUnit>
+    <CreateUnit id="mov1#opm7#cru2" name="Create1" gr:x="400" gr:y="85" entity="ent6" skipBlankRecords="false">
+      <OKLink id="mov1#opm7#cru2#oln8" name="OKFlow3" to="mov1#opm7#okcu7" automaticCoupling="true"/>
+      <KOLink id="mov1#opm7#cru2#kln4" name="KOFlow1" to="mov1#opm7#kocu5" automaticCoupling="true"/>
+    </CreateUnit>
+    <OKCollectorUnit id="mov1#opm7#okcu7" name="OK Port6" gr:x="580" gr:y="80"/>
+    <KOCollectorUnit id="mov1#opm7#kocu5" name="KO Port4" gr:x="580" gr:y="180"/>
+  </OperationUnits>
+</OperationModule>

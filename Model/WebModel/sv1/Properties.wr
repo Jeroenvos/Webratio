@@ -1,22 +1,15 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Home" homePage="sv1#page1">
   <OperationUnits>
-    <DeleteUnit gr:x="420" gr:y="480" id="sv1#dlu1" name="Delete User" entity="User">
+    <DeleteUnit gr:x="450" gr:y="460" id="sv1#dlu1" name="Delete User" entity="User">
       <Selector id="sv1#dlu1#su2" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv1#dlu1#oln6" name="OKFlow6" to="sv1#page1" automaticCoupling="true"/>
-      <KOLink id="sv1#dlu1#kln2" name="KOFlow2" to="sv1#page2" automaticCoupling="true" gr:bendpoints="433,90,73,340;396,-386,286,44"/>
     </DeleteUnit>
-    <LoginUnit gr:x="90" gr:y="55" id="sv1#lgu1" name="Login"/>
-    <ModuleInstanceUnit gr:x="385" gr:y="135" id="sv1#miu1" moduleId="mov1#opm3">
-      <OKLink id="sv1#miu1#oln10" to="sv1#page2#mssu1" name="OKFlow5" codeRef="mov1#opm3#okcu1"/>
-      <OKLink id="sv1#miu1#oln11" to="sv1#page1" name="OKFlow1" codeRef="mov1#opm3#okcu2" gr:bendpoints="-40,105,255,-85"/>
-      <KOLink id="sv1#miu1#kln4" to="sv1#page2" name="KOFlow3" gr:bendpoints="110,-90,55,105"/>
-    </ModuleInstanceUnit>
+    <LoginUnit gr:x="240" gr:y="60" id="sv1#lgu1" name="Login" landmark="false"/>
     <ModuleInstanceUnit gr:x="445" gr:y="320" id="sv1#miu3" action="true" moduleId="mov1#opm4">
-      <KOLink id="sv1#miu3#kln11" name="KOFlow11" to="sv1#page2" gr:bendpoints="118,-203,133,142"/>
       <OKLink id="sv1#miu3#oln30" name="OKFlow30" to="sv1#page2" automaticCoupling="true" codeRef="mov1#opm4#okcu4" gr:bendpoints="192,-183,207,162"/>
-      <OKLink id="sv1#miu3#oln31" name="OKFlow31" to="sv1#page1" automaticCoupling="true" codeRef="mov1#opm4#okcu3" gr:bendpoints="-144,-33,216,-38"/>
+      <OKLink id="sv1#miu3#oln31" name="OKFlow31" to="sv1#page1" automaticCoupling="true" codeRef="mov1#opm4#okcu3"/>
     </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

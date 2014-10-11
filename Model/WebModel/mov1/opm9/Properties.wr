@@ -1,0 +1,22 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm9" name="Create Item" gr:x="328" gr:y="148">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm9#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm9#icu9#icp31" name="caption"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp32" name="imgUrl"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp33" name="requesterId"/>
+      <OKLink id="mov1#opm9#icu9#oln17" name="OKFlow5" to="mov1#opm9#cru6">
+        <LinkParameter id="mov1#opm9#icu9#oln17#par79" name="caption_caption" source="mov1#opm9#icu9#icp31" target="mov1#opm9#cru6.ent9#att11"/>
+        <LinkParameter id="mov1#opm9#icu9#oln17#par80" name="imgUrl_imageUrl" source="mov1#opm9#icu9#icp32" target="mov1#opm9#cru6.ent9#att12"/>
+        <LinkParameter id="mov1#opm9#icu9#oln17#par81" name="requesterId_Requester.oid(ItemToRequester)" source="mov1#opm9#icu9#icp33" target="mov1#opm9#cru6.rel2#role4.userOID"/>
+        <LinkParameter id="mov1#opm9#icu9#oln17#par83" name="title_title" source="mov1#opm9#icu9#icp34" target="mov1#opm9#cru6.ent9#att10"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp34" name="title"/>
+    </InputCollectorUnit>
+    <CreateUnit id="mov1#opm9#cru6" name="Create1" gr:x="305" gr:y="75" entity="ent9">
+      <OKLink id="mov1#opm9#cru6#oln19" name="OKFlow3" to="mov1#opm9#okcu8" automaticCoupling="true"/>
+      <KOLink id="mov1#opm9#cru6#kln5" name="KOFlow1" to="mov1#opm9#kocu6" automaticCoupling="true"/>
+    </CreateUnit>
+    <OKCollectorUnit id="mov1#opm9#okcu8" name="OK Port6" gr:x="480" gr:y="80"/>
+    <KOCollectorUnit id="mov1#opm9#kocu6" name="KO Port4" gr:x="480" gr:y="180"/>
+  </OperationUnits>
+</OperationModule>

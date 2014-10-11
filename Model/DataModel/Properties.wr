@@ -123,18 +123,6 @@
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
   </Entity>
-  <Entity gr:x="90" gr:y="480" id="ent13" name="Reward" duration="persistent" attributeOrder="ent13#att27 ent13#att28" db:database="db1" db:table="reward">
-    <Attribute id="ent13#att27" key="true" name="oid" type="integer" db:column="oid"/>
-    <Attribute id="ent13#att28" name="amount" type="float" db:column="amount"/>
-  </Entity>
-  <Relationship id="rel11" name="Item_Annotation" sourceEntity="ent9" targetEntity="ent10" db:database="db1" db:table="item">
-    <RelationshipRole1 id="rel11#role21" name="ItemToAnnotation" maxCard="1">
-      <db:JoinColumn attribute="ent9#att9" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel11#role22" name="AnnotationToItem" maxCard="N">
-      <db:JoinColumn attribute="ent10#att16" name="annotation_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Relationship id="rel12" name="Requester_Annotation Campaign" sourceEntity="ent12" targetEntity="ent11" db:database="db1" db:table="annotation_campaign">
     <RelationshipRole1 id="rel12#role23" name="RequesterToAnnotation Campaign" maxCard="N">
       <db:JoinColumn attribute="userOID" name="requester_oid"/>
@@ -163,6 +151,30 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel14#role28" name="WorkerToTaskExecution" maxCard="N">
       <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel1" name="Task_Worker" sourceEntity="ent6" targetEntity="ent7" db:database="db1" db:table="task_worker">
+    <RelationshipRole1 id="rel1#role1" name="TaskToWorker_2" maxCard="N">
+      <db:JoinColumn attribute="ent6#att1" name="task_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="WorkerToTask" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Requester_Item" sourceEntity="ent12" targetEntity="ent9" gr:bendpoints="197,1,477,-354;198,252,478,-103;-175,253,105,-102" db:database="db1" db:table="item">
+    <RelationshipRole1 id="rel2#role3" name="RequesterToItem" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="requester_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="ItemToRequester" maxCard="1">
+      <db:JoinColumn attribute="ent9#att9" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel3" name="Item_Annotation" sourceEntity="ent9" targetEntity="ent10" db:database="db1" db:table="annotation">
+    <RelationshipRole1 id="rel3#role5" name="ItemToAnnotation" maxCard="N">
+      <db:JoinColumn attribute="ent9#att9" name="item_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="AnnotationToItem" maxCard="1">
+      <db:JoinColumn attribute="ent10#att16" name="oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>
