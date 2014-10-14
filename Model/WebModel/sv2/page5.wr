@@ -4,15 +4,15 @@
       <Selector id="sv2#page5#dau3#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page5#dau3#su5#kcond4" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#page5#dau3#ln14" name="Flow14" to="sv2#page5#inu2" type="transport" validate="true">
+      <Link id="sv2#page5#dau3#ln14" name="Submit" to="sv2#page5#inu2" type="transport" validate="true">
         <LinkParameter id="sv2#page5#dau3#ln14#par43" name="oid_RoleCondition2 [oid]" source="data.ent11#att19" target="sv2#page5#inu2#su8#rcond2.ent11#att19"/>
       </Link>
-      <Link id="sv2#page5#dau3#ln17" name="Flow17" to="sv2#page5#enu4" type="transport" validate="true">
+      <Link id="sv2#page5#dau3#ln17" name="Submit" to="sv2#page5#enu4" type="transport" validate="true">
         <LinkParameter id="sv2#page5#dau3#ln17#par59" name="oid_acID" source="data.ent11#att19" target="sv2#page5#enu4#fld12_slot"/>
       </Link>
     </DataUnit>
     <EntryUnit gr:x="20" gr:y="125" id="sv2#page5#enu4" name="Add Task" entity="ent6" linkOrder="sv2#page5#enu4#ln15">
-      <Link id="sv2#page5#enu4#ln15" name="Flow15" to="sv2#miu4" type="normal" validate="true">
+      <Link id="sv2#page5#enu4#ln15" name="Submit" to="sv2#miu4" type="normal" validate="true">
         <LinkParameter id="sv2#page5#enu4#ln15#par60" name="acID_acID" source="sv2#page5#enu4#fld12" target="sv2#miu4.mov1#opm7#icu7#icp30"/>
         <LinkParameter id="sv2#page5#enu4#ln15#par61" name="description_description" source="sv2#page5#enu4#fld7" target="sv2#miu4.mov1#opm7#icu7#icp18"/>
         <LinkParameter id="sv2#page5#enu4#ln15#par62" name="expiration_expiration" source="sv2#page5#enu4#fld13" target="sv2#miu4.mov1#opm7#icu7#icp20"/>
@@ -31,8 +31,8 @@
       <Selector id="sv2#page5#inu2#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page5#inu2#su8#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel13#role26"/>
       </Selector>
-      <Link id="sv2#page5#inu2#ln20" name="delete" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv2#page5#inu2#ln21" name="detail" to="sv2#page6#dau4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page5#inu2#ln20" name="Campaign" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page5#inu2#ln21" name="delete" to="sv2#page6#dau4" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

@@ -1,0 +1,72 @@
+[14 okt 2014 08:55:17] DEBUG Executing SQL script
+[14 okt 2014 08:55:17] INFO ================================================================================
+[14 okt 2014 08:55:17] INFO outputPath= '/Users/jeroenvos/Documents/Jeroen/projecten/Webratio/.Temp~/UpdateSQL.xml'
+[14 okt 2014 08:55:17] INFO onError= 'stop'
+[14 okt 2014 08:55:17] INFO statementSeparator= ';'
+[14 okt 2014 08:55:17] INFO derby.system.home= '/Users/jeroenvos/Documents/Jeroen/projecten/.metadata/.plugins/com.webratio.commons.db/derby'
+[14 okt 2014 08:55:17] INFO password= ''
+[14 okt 2014 08:55:17] INFO url= 'jdbc:mysql://127.0.0.1:3306/annotation'
+[14 okt 2014 08:55:17] INFO username= 'root'
+[14 okt 2014 08:55:17] INFO autoCommit= 'false'
+[14 okt 2014 08:55:17] INFO outputLogPath= '/Users/jeroenvos/Documents/Jeroen/projecten/Webratio/.Temp~/UpdateSQL.xml.log'
+[14 okt 2014 08:55:17] INFO driverClass= 'com.mysql.jdbc.Driver'
+[14 okt 2014 08:55:17] INFO encoding= ''
+[14 okt 2014 08:55:17] INFO eventSocketPort= '56146'
+[14 okt 2014 08:55:17] INFO sqlScript= '/Users/jeroenvos/Documents/Jeroen/projecten/Webratio/.Temp~/UpdateSQL.sql'
+[14 okt 2014 08:55:17] INFO ================================================================================
+[14 okt 2014 08:55:17] INFO Connecting to the Database...
+[14 okt 2014 08:55:17] INFO Database connection estabilished
+[14 okt 2014 08:55:17] INFO transaction isolation: 4
+[14 okt 2014 08:55:17] DEBUG ================================================================================
+[14 okt 2014 08:55:17] DEBUG Executing SQL script file: /Users/jeroenvos/Documents/Jeroen/projecten/Webratio/.Temp~/UpdateSQL.sql
+[14 okt 2014 08:55:17] DEBUG Executing statement:  create table `group` ( `oid`  integer  not null, `groupname`  varchar(255), primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `module` ( `oid`  integer  not null, `moduleid`  varchar(255), `modulename`  varchar(255), primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `user` ( `oid`  integer  not null, `username`  varchar(255), `password`  varchar(255), `email`  varchar(255), `name`  varchar(255), `birthdate`  date, `registrationdate`  date, primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `annotation` ( `oid`  integer  not null, `label`  varchar(255), `confidence`  integer, primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `annotation_campaign` ( `oid`  integer  not null, `name`  varchar(255), `budget`  double precision, `status`  bit, primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `requester` ( `user_oid`  integer  not null, `budget`  double precision, primary key (`user_oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `taskexecution` ( `oid`  integer  not null, `duration`  time, `executiontime`  datetime, `accuracy`  double precision, primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `task` ( `oid`  integer  not null, `title`  varchar(255), `description`  varchar(255), `reward`  double precision, `maxexecutiontime`  time, `expiration`  datetime, primary key (`oid`) )
+[14 okt 2014 08:55:17] DEBUG Executing statement:    create table `worker` ( `user_oid`  integer  not null, `accuracyscore`  double precision, primary key (`user_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `skill` ( `oid`  integer  not null, primary key (`oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `item` ( `oid`  integer  not null, `title`  varchar(255), `caption`  varchar(255), `imageurl`  varchar(255), primary key (`oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `group`  add column  `module_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `group`   add index fk_group_module (`module_oid`), add constraint fk_group_module foreign key (`module_oid`) references `module` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `group_module` ( `group_oid`  integer not null, `module_oid`  integer not null, primary key (`group_oid`, `module_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_group (`group_oid`), add constraint fk_group_module_group foreign key (`group_oid`) references `group` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_module (`module_oid`), add constraint fk_group_module_module foreign key (`module_oid`) references `module` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `user`  add column  `group_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `user`   add index fk_user_group (`group_oid`), add constraint fk_user_group foreign key (`group_oid`) references `group` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `user_group` ( `user_oid`  integer not null, `group_oid`  integer not null, primary key (`user_oid`, `group_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_user (`user_oid`), add constraint fk_user_group_user foreign key (`user_oid`) references `user` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_group (`group_oid`), add constraint fk_user_group_group foreign key (`group_oid`) references `group` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `task_worker` ( `task_oid`  integer not null, `worker_oid`  integer not null, primary key (`task_oid`, `worker_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `task_worker`   add index fk_task_worker_task (`task_oid`), add constraint fk_task_worker_task foreign key (`task_oid`) references `task` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `task_worker`   add index fk_task_worker_worker (`worker_oid`), add constraint fk_task_worker_worker foreign key (`worker_oid`) references `worker` (`user_oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `annotation_campaign`  add column  `requester_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `annotation_campaign`   add index fk_annotation_campaign_request (`requester_oid`), add constraint fk_annotation_campaign_request foreign key (`requester_oid`) references `requester` (`user_oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `task`  add column  `annotation_campaign_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `task`   add index fk_task_annotation_campaign (`annotation_campaign_oid`), add constraint fk_task_annotation_campaign foreign key (`annotation_campaign_oid`) references `annotation_campaign` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `taskexecution`  add column  `worker_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `taskexecution`   add index fk_taskexecution_worker (`worker_oid`), add constraint fk_taskexecution_worker foreign key (`worker_oid`) references `worker` (`user_oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `item`  add column  `requester_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `item`   add index fk_item_requester (`requester_oid`), add constraint fk_item_requester foreign key (`requester_oid`) references `requester` (`user_oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `annotation`  add column  `item_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `annotation`   add index fk_annotation_item (`item_oid`), add constraint fk_annotation_item foreign key (`item_oid`) references `item` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `item_task` ( `item_oid`  integer not null, `task_oid`  integer not null, primary key (`item_oid`, `task_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `item_task`   add index fk_item_task_item (`item_oid`), add constraint fk_item_task_item foreign key (`item_oid`) references `item` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `item_task`   add index fk_item_task_task (`task_oid`), add constraint fk_item_task_task foreign key (`task_oid`) references `task` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `taskexecution`  add column  `task_oid`  integer
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `taskexecution`   add index fk_taskexecution_task (`task_oid`), add constraint fk_taskexecution_task foreign key (`task_oid`) references `task` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `skill_task` ( `skill_oid`  integer not null, `task_oid`  integer not null, primary key (`skill_oid`, `task_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `skill_task`   add index fk_skill_task_skill (`skill_oid`), add constraint fk_skill_task_skill foreign key (`skill_oid`) references `skill` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `skill_task`   add index fk_skill_task_task (`task_oid`), add constraint fk_skill_task_task foreign key (`task_oid`) references `task` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    create table `skill_worker` ( `skill_oid`  integer not null, `worker_oid`  integer not null, primary key (`skill_oid`, `worker_oid`) )
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `skill_worker`   add index fk_skill_worker_skill (`skill_oid`), add constraint fk_skill_worker_skill foreign key (`skill_oid`) references `skill` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:  alter table `skill_worker`   add index fk_skill_worker_worker (`worker_oid`), add constraint fk_skill_worker_worker foreign key (`worker_oid`) references `worker` (`user_oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `requester`   add index fk_requester_user (`user_oid`), add constraint fk_requester_user foreign key (`user_oid`) references `user` (`oid`)
+[14 okt 2014 08:55:18] DEBUG Executing statement:    alter table `worker`   add index fk_worker_user (`user_oid`), add constraint fk_worker_user foreign key (`user_oid`) references `user` (`oid`)
+[14 okt 2014 08:55:18] DEBUG ================================================================================
+[14 okt 2014 08:55:18] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[14 okt 2014 08:55:18] INFO Database connection closed
+[14 okt 2014 08:55:18] DEBUG Total time: 1411 milliseconds

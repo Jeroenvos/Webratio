@@ -25,8 +25,8 @@
       <Selector id="sv2#page4#inu3#su4" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page4#inu3#su4#rcond1" name="TrainingsOfCurrentUser" predicate="in" implied="false" role="rel12#role23"/>
       </Selector>
-      <Link id="sv2#page4#inu3#ln12" name="detail" to="sv2#page5#dau3" type="normal" automaticCoupling="true" validate="true"/>
-      <Link id="sv2#page4#inu3#ln18" name="delete" to="sv2#dlu3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="50,135,50,-140"/>
+      <Link id="sv2#page4#inu3#ln12" name="delete" to="sv2#page5#dau3" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page4#inu3#ln18" name="campaign" to="sv2#dlu3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="50,135,50,-140"/>
     </IndexUnit>
     <EntryUnit gr:x="0" gr:y="145" id="sv2#page4#enu1" name="Create Campaign" entity="ent11" linkOrder="sv2#page4#enu1#ln7">
       <Link id="sv2#page4#enu1#ln7" name="Flow7" to="sv2#miu1" type="normal" validate="true">
@@ -43,7 +43,7 @@
         <RelationshipRoleCondition id="sv2#page4#inu8#su18#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel2#role3"/>
       </Selector>
       <Link id="sv2#page4#inu8#ln32" name="delete" to="sv2#dlu4" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv2#page4#inu8#ln38" name="detail" to="sv2#page4#dau8" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page4#inu8#ln38" name="item" to="sv2#page4#dau8" type="normal" automaticCoupling="true" validate="true"/>
     </IndexUnit>
     <EntryUnit gr:x="15" gr:y="280" id="sv2#page4#enu8" name="Create Item" linkOrder="sv2#page4#enu8#ln35" entity="ent9" fieldOrder="sv2#page4#enu8#fld19 sv2#page4#enu8#fld18 sv2#page4#enu8#fld20">
       <Link id="sv2#page4#enu8#ln35" name="Flow34" to="sv2#miu5" type="normal" validate="true">

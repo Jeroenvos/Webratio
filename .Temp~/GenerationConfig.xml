@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+  <Properties>
+    <Property name="ajaxActivated">true</Property>
+    <Property name="applicationServer">Tomcat</Property>
+    <Property name="cloudDeploy">false</Property>
+    <Property name="commonsLibDir">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.commons.libs_7.2.5.201408080114/lib</Property>
+    <Property name="dbConfigPath">/var/folders/nj/r73qjv1577vc3b_b0wylz4l80000gn/T/WRDBConfig3164695551073839268.xml</Property>
+    <Property name="defaultEncoding"></Property>
+    <Property name="deployCorePluginDir">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/configuration/org.eclipse.osgi/bundles/49/1/.cp</Property>
+    <Property name="derbySystemHome">/Users/jeroenvos/Documents/Jeroen/projecten/.metadata/.plugins/com.webratio.commons.db/derby</Property>
+    <Property name="enterpriseProjectDir"></Property>
+    <Property name="eventSocketPort">56812</Property>
+    <Property name="excludedProjects" type="list"></Property>
+    <Property name="generationTime">201410140934</Property>
+    <Property name="helpersPluginDir">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.generator.helpers_7.2.5.201408080114</Property>
+    <Property name="i18nBundleKeysFile" type="file"></Property>
+    <Property name="i18nExtraBundleFile" type="file"></Property>
+    <Property name="localDeploy">true</Property>
+    <Property name="lockDir">/Users/jeroenvos/Documents/Jeroen/projecten/Webratio/.Temp~</Property>
+    <Property name="normalizeDescriptors">false</Property>
+    <Property name="outputPath">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/Tomcat/webapps/Webratio</Property>
+    <Property name="phases">All</Property>
+    <Property name="projectDir">/Users/jeroenvos/Documents/Jeroen/projecten/Webratio</Property>
+    <Property name="projectName">Webratio</Property>
+    <Property name="projectPath">/var/folders/nj/r73qjv1577vc3b_b0wylz4l80000gn/T/Project40312175436711528.wr</Property>
+    <Property name="projectType">WEBPROJECT</Property>
+    <Property name="rootModuleName"></Property>
+    <Property name="uiPluginDir">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.ide.ui_7.2.5.201408080114</Property>
+    <Property name="webappPluginDir">/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.generator.webapp_7.2.5.201408080114</Property>
+    <Property name="wrBuildId">201408080114</Property>
+    <Property name="wrGenerateOldValidationRules">false</Property>
+    <Property name="wrModelStatistics">pages=8|units=77</Property>
+    <Property name="wrVersion">7.2.5</Property>
+  </Properties>
+  <Plugins>
+    <Plugin id="com.webratio.commons.libs" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.commons.libs_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.commons.transform" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.commons.transform_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.debug" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.debug_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.json" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.json_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.apache.commons.codec" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.apache.commons.codec_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.apache.commons.collections" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.apache.commons.collections_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.apache.commons.httpclient" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.apache.commons.httpclient_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.apache.commons.lang" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.apache.commons.lang_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.apache.commons.logging" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.apache.commons.logging_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.dom4j" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.dom4j_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.lib.javassist" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.lib.javassist_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.rtx.extras" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.rtx.extras_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.rtx" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.rtx_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.struts13" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.struts13_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.units.content" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.content_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.controlflow" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.controlflow_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.module" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.module_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.operation" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.operation_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.session" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.session_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.utility" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.utility_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.validation" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.validation_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.units.ws" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.units.ws_7.2.5.201408080114" type="components"/>
+    <Plugin id="com.webratio.ws" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.ws_7.2.5.201408080114"/>
+    <Plugin id="com.webratio.xsd" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/com.webratio.xsd_7.2.5.201408080114"/>
+  </Plugins>
+  <Styles>
+    <Style name="Excel" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/Excel_7.2.5.201408080114"/>
+    <Style name="Multiflex" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/Multiflex_7.2.5.201408080114"/>
+    <Style name="Reports" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/Reports_7.2.5.201408080114"/>
+    <Style name="WebRatio" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/WebRatio_7.2.5.201408080114"/>
+    <Style name="WRDefault" path="/Users/jeroenvos/Documents/Jeroen/TUDelft/Tu delft/Master/2/Web Science and Engineering/webratio/WebRatio_Platform_University_Student_Edition_7.2.5.x64bit.MacOSX/WebRatio/plugins/WRDefault_7.2.5.201408080114"/>
+  </Styles>
+  <FileEncodings/>
+</Configuration>

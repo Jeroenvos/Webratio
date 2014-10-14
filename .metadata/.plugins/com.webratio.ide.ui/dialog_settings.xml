@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.webratio.ide.ui.actions.MoveElementsAction.chooseTargetElementDialog">
+	</section>
+	<section name="WR5ImportProjectWizard">
+		<item value="/Users/jeroenvos/Documents/Jeroen/projecten/Webratio" key="SOURCE_DIR"/>
+	</section>
+	<section name="com.webratio.ide.ui.grid.views.GridViewPage.Settings">
+		<item value="NONE" key="AUTO_HORIZONTAL_FIT_PREFERENCE"/>
+	</section>
+</section>
