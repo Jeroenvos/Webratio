@@ -3,7 +3,7 @@ Webratio
 
 Web science and engineering opdracht
 
-Voor dat je begint te werken, moet je even kijken of er veranderingen zijn:
+<!-- Voor dat je begint te werken, moet je even kijken of er veranderingen zijn:
 
 `git pull`
 
@@ -18,3 +18,4 @@ Sla je veranderingen op:
 Naar github:
 `git push`
 
+-->
